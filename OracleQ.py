@@ -40,7 +40,7 @@ class OracleQ(object):
         Qvals = self.Qs[s]
         action = np.random.choice(np.flatnonzero(Qvals == np.max(Qvals)))
         return (action)
-
+    
     def get_value(self,x):
         s = self.state_to_str(x)
         if s not in self.Qs.keys():
@@ -48,7 +48,7 @@ class OracleQ(object):
             self.Qs[s] = [0 for a in range(self.num_actions)]
             self.Ns[s] = [0 for a in range(self.num_actions)]
         Qvals = self.Qs[s]
-        return(np.max(Qvals))
+        return(np.max(Qvals)) 
 
     def save_transition(self, state, action, reward, next_state):
         self.traj.append(Transition(state, action, next_state, reward))
