@@ -268,7 +268,7 @@ def train_ulo(env, alg, args):
                         #print("new element added in label_standard_set")
                         break
         
-        # sample one trajectory and feed to algorithm
+        # sample one trajectory and feed to the tabular RL algorithm
         state = env.reset()
         state = np.reshape(state, (-1, 3+H))
         done = False
